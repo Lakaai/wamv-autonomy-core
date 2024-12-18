@@ -22,8 +22,22 @@ source /opt/ros/humble/setup.bash  # or whatever ROS2 version you're using
 # Source the VRX workspace
 source ~/vrx_ws/install/setup.bash  # adjust path if different
 ```
-Enable GPU Acceleration (WSL2 Only)
+
+### Hardware Acceleration (WSL2)
+
+On a device with multiple GPUs the WSL instance will select the first enumerated GPU by default. 
+To choose a specific GPU, set the environment variable below to the name of your GPU as it appears in device manager:
+
+```bash
+export MESA_D3D12_DEFAULT_ADAPTER_NAME="<NameFromDeviceManager>"
+```
+This will do a string match, so if you set it to "NVIDIA" it will match the first GPU that starts with "NVIDIA".
+
+
+
+The MESA utility glxinfo can be used to determine which GPU is currently used. For example, below the NVIDIA GPU is being used.
 
 ```bash
 export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
+glxinfo -B
 ```
