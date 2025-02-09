@@ -1,4 +1,5 @@
-### wamv-perception-core
+
+# wamv-perception-core
 
 So far this repository only contains a solution for the "Scan-the-code" task in the maritime RobotX Challenge.
 
