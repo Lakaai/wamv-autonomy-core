@@ -38,6 +38,7 @@ This will do a string match, so if you set it to "NVIDIA" it will match the firs
 The MESA utility glxinfo can be used to determine which GPU is currently used. For example, below the NVIDIA GPU is being used.
 
 ```bash
+export GALLIUM_DRIVER=d3d12
 export MESA_D3D12_DEFAULT_ADAPTER_NAME=NVIDIA
 glxinfo -B
 ```
